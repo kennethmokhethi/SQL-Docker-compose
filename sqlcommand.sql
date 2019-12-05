@@ -1,6 +1,6 @@
 
 -- Creating the customer table with the columns heading
-CREATE TABLE Customer_Table
+CREATE TABLE Customers_Table
 (
     --Setting the customerID as primary key and 
     --Adding the auto increment function
@@ -13,11 +13,10 @@ CREATE TABLE Customer_Table
     Email varchar(100),
     city varchar(20),
     country varchar(50),
-
 );
 
 -- Inserting values in the customer table
-INSERT INTO Customer_Table
+INSERT INTO Customers_Table
     (FirstName,LastName,Gender,AddressLine,Phone,Email,city,country)
 VALUES('John', 'Hilbert', 'Male', '284 Chaucer st', 084789657, 'John@gmail.com', 'Johannesburg', 'South Africa');
 INSERT INTO Customer_Table
@@ -42,7 +41,6 @@ CREATE TABLE Employees_Table
     LastName varchar(50),
     Email varchar(100),
     JobTitle varchar(20)
-
 );
 
 -- Inserting values into Employees table
@@ -90,7 +88,6 @@ CREATE TABLE Payments_Table
     PaymentID SERIAL PRIMARY KEY,
     PaymentDate DATE,
     Amount decimal
-
 );
 
 -- Inserting values in the Payments table
