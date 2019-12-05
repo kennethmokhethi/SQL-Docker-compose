@@ -12,23 +12,23 @@ CREATE TABLE Customers_Table
     Phone bigint,
     Email varchar(100),
     city varchar(20),
-    country varchar(50),
+    country varchar(50)
 );
 
 -- Inserting values in the customer table
 INSERT INTO Customers_Table
     (FirstName,LastName,Gender,AddressLine,Phone,Email,city,country)
 VALUES('John', 'Hilbert', 'Male', '284 Chaucer st', 084789657, 'John@gmail.com', 'Johannesburg', 'South Africa');
-INSERT INTO Customer_Table
+INSERT INTO Customers_Table
     (FirstName,LastName,Gender,AddressLine,Phone,Email,city,country)
 VALUES('Thando', 'Sithole', 'Female', '240 Sect 1', 0794445584, 'thando@gmail.com', 'Cape Town', 'South Africa');
-INSERT INTO Customer_Table
+INSERT INTO Customers_Table
     (FirstName,LastName,Gender,AddressLine,Phone,Email,city,country)
 VALUES( 'Leon', 'Glen', 'Male', '81 Everton Rd,Gillits', 0820832830, 'Leaon@gmail.com', 'Durban', 'South Africa');
-INSERT INTO Customer_Table
+INSERT INTO Customers_Table
     (FirstName,LastName,Gender,AddressLine,Phone,Email,city,country)
 VALUES('Charl', 'Muller', 'Male', '290 Dorset Ecke', 448568725, 'Charl.muller@yahoo.com', 'Berlin', 'Germany');
-INSERT INTO Customer_Table
+INSERT INTO Customers_Table
     (FirstName,LastName,Gender,AddressLine,Phone,Email,city,country)
 VALUES( 'Julia', 'Stein', 'Female', '2 Wernerring', +448672445058, 'Js234@yahoo.com', 'Frankfurt', 'Germany');
 
@@ -107,9 +107,10 @@ CREATE TABLE Orders_Table
 (
     OrderID SERIAL PRIMARY KEY,
     ProductID INTEGER REFERENCES Products_Table(ProductID),
-    PaymentID INTEGER REFERENCES Payment_Table(PaymentID),
+    PaymentID INTEGER REFERENCES Payments_Table(PaymentID),
     FulfilledByEmployeeID INTEGER REFERENCES Employees_Table(EmployeeID),
     DateRequired DATE,
+    DateShipped DATE,
     Status varchar(20)
 );
 
@@ -130,7 +131,7 @@ VALUES(3, 3, 3, '06-09-2018', 'Not shipped');
 -- Query
 -- SELECT ALL records from table Customers
 SELECT *
-FROM Customers_Table
+FROM Customers_Table;
 
 -- SELECT records only from the name column in the Customers table
 -- Show the name of the Customer whose CustomerID is 1.
